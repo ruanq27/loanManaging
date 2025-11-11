@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+//use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Debt;
+
 
 class User extends Authenticatable
 {
@@ -18,6 +20,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'role',
         'name',
         'email',
         'password',
@@ -44,5 +47,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function loans() {
+        return $this->hasMany(Debt::class);
+    }
+
+    public function setPasswordAttribute($value) {
+    $this->attributes['password'] = bcrypt($value); 
+    }
+
+    public function scopeAdmins($query) {
+    return $query->where('role', 'admin');
+    }
+
+    public function scopeUsers($query) {
+    return $query->where('role', 'user');
     }
 }
