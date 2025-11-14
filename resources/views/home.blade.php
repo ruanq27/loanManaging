@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <div class="jumbotron jumbotron-custom" style="color : #222;">
+    <div class="jumbotron jumbotron-custom">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-left">
@@ -20,41 +20,26 @@
                 </div>
             </div>
         </div>
-    </div <!-- HERO SECTION -->
-    <section class="hero text-center py-5 bg-light">
+    </div> <!-- HERO SECTION -->
+    <section class="hero text-center py-5">
         <h1>Manage Your Loans Effortlessly</h1>
         <p>Streamline your financial operations and take control of all your loan products in one place.</p>
         <a href="#" class="btn btn-primary btn-lg m-2">Get Started</a>
         <a href="#" class="btn btn-secondary btn-lg m-2">Learn More</a>
     </section>
 
-    <!-- PRODUCTS SECTION -->
-    <section class="products container py-5">
-        <h2>Our Loan Products</h2>
-        <p>Choose the right solution for your financial needs.</p>
-
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <h3>Personal Loan</h3>
-                <p>Flexible loans designed to help you cover unexpected expenses or personal projects with ease.</p>
-                <a href="#" class="btn btn-secondary">Learn More</a>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h3>Business Loan</h3>
-                <p>Fuel your business growth with tailored loans offering competitive interest rates and repayment options.
-                </p>
-                <a href="#" class="btn btn-secondary">Learn More</a>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h3>Mortgage Loan</h3>
-                <p>Find the perfect home financing solution with simple terms and fast approval processes.</p>
-                <a href="#" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
+    <!-- PRODUCTS SECTION React -->
+    <div class="col-md-6 text-left">
+        <h2>Products</h2>
+        <p>Discover our range of loan management products designed to simplify your financial operations.</p>
+        <!-- React will render here -->
+        <div id="products-root"></div>
+        
+    </div>
+   @vite(['resources/js/app.jsx', 'resources/css/app.css'])
+    
     <!-- HOW IT WORKS SECTION -->
-    <section class="how-it-works container py-5 bg-light">
+    <section class="how-it-works container py-5">
         <h2>How It Works</h2>
         <div class="mt-3">
             <p><strong>Step 1:</strong> Sign Up – Create your account in minutes.</p>
@@ -78,7 +63,7 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="faq container py-5 bg-light">
+    <section class="faq container py-5">
         <h2>Frequently Asked Questions</h2>
         <div class="mt-3">
             <p><strong>Q1:</strong> How long does it take to get approved?</p>

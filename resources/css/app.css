@@ -11,11 +11,14 @@
 }
 
 .jumbotron-custom {
-    background-image: url('../images/jumbotron-bg.jpg');
+    background-image: url('C:\Users\ruanq\loanManaging\public\images\jumbotron-bg-removebg-preview.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #212529;
     min-height: 400px;
     color: white;
+    position: relative; 
 }
+
 
